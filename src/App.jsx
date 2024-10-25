@@ -1,42 +1,37 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Beranda } from "./pages/beranda/Beranda";
-import Detail from "./pages/Detail";
-import { Result } from "postcss";
-import SearchResults from "./pages/Result";
 import "./assets/stylebaru.scss";
-import { ProductPage } from "./pages/Product/ProductPage";
-import Produk from "./pages/Produk/Produk";
-import Country from "./pages/Country/Country";
-import DetailCountry from "./pages/DetailCountry";
-import ThemeContex from "./components/context/ThemeContex";
+import Beranda from "./pages/Beranda";
+import Detail from "./pages/Detail";
+import ThemeContex from "./context/ThemeContex";
+import { Provider } from "react-redux";
+import store from "./store/store";
+import { useState } from "react";
+import Search from "./pages/Search";
+import DaftarUlas from "./pages/DaftarUlas";
+import Footer from "./components/Footer";
 
 function App() {
   const [count, setCount] = useState(0);
   const theme = useState("light");
-
   return (
-    <>
+    <div className="">
       <BrowserRouter>
         <ThemeContex.Provider value={theme}>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<Beranda />} />
-            <Route path={"/detail/:id"} element={<Detail />} />
-            <Route path={"/detailcountry/:id"} element={<DetailCountry />} />
-            <Route path={"/result"} element={<Result />} />
-            <Route path="/search" element={<SearchResults />} />
-            <Route path="/product" element={<ProductPage />} />
-            <Route path="/produk" element={<Produk />} />
-            <Route path="/country" element={<Country />} />
-          </Routes>
+          <Provider store={store}>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Beranda />} />
+              <Route path="/detail/:id" element={<Detail />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/rated" element={<DaftarUlas />} />
+            </Routes>
+            <Footer />
+          </Provider>
         </ThemeContex.Provider>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 
