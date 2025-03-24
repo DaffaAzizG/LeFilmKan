@@ -54,7 +54,7 @@ const Navbar = () => {
 
         <div className="navbar-end">
           <Link to="/search">
-            <button className="btn btn-ghost btn-circle">
+            <button className="btn btn-ghost btn-circle" name="search">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -98,11 +98,12 @@ const Navbar = () => {
                 className="menu menu-sm dropdown-content rounded-box mt-3 w-52 p-2 shadow bg-gray-100 text-black dark:bg-slate-900 dark:text-gray-400 z-30"
               >
                 <li>
-                  <Link to="/rated">Daftar Rating</Link>
+                  <Link to="/">Beranda</Link>
                 </li>
                 <li>
-                  <Link to="/whistlist">Book Mark</Link>
+                  <Link to="/rated">Daftar Rating</Link>
                 </li>
+
                 <li>
                   <span>
                     Theme:

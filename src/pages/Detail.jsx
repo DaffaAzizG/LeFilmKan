@@ -203,6 +203,11 @@ const Detail = () => {
 
         {/* Trailer Section */}
       </div>
+      <div>
+        <p>
+          Haloooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+        </p>
+      </div>
     </div>
   );
 };

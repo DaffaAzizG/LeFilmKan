@@ -26,6 +26,7 @@ const Search = () => {
       {/* Input untuk search */}
       <input
         type="text"
+        name="searchInput"
         placeholder="Search by title..."
         className="p-2 border border-black dark:border-gray-400 bg-white dark:bg-gray-900 rounded mb-4 w-full"
         value={searchTerm}
